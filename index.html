@@ -6,37 +6,18 @@
   <title>Document</title>
 </head>
 <body>
-  <h2>Classes: Getters & Setters</h2>
+  <h2>Classes: HTML List Binding</h2>
+
+  <ul id="my-list">
+    <!-- To be filled by Javascript -->
+  </ul>
+
+  <script src="listBinding.js"></script>
 
   <script type="text/javascript">
-    class Square {
-      constructor(_width) {
-        this.width = _width;
-        this.height = _width;
-        this.numOfRequestsForArea = 0;
-      }
-
-      get area() {
-        this.numOfRequestsForArea++;
-        return this.width * this.height;
-      }
-
-      set area(area) {
-        this.width = Math.sqrt(area);
-        this.height = this.width;
-      }
-    }
-
-    let square1 = new Square(4);
-    square1.area = 25;
-    // console.log(square1.area);
-    // console.log(square1.area);
-    // console.log(square1.area);
-    // console.log(square1.area);
-    // console.log(square1.numOfRequestsForArea);
-    // console.log(square1.width);
-    // console.log(square1.height);
-    // console.log(square1.area);
+    const myList = document.getElementById("my-list");
+    const listBinding = new ListBinding(myList);
   </script>
+
 </body>
 </html>
