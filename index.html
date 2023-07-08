@@ -9,34 +9,29 @@
   <h2>Classes: Getters & Setters</h2>
 
   <script type="text/javascript">
-    class Square {
+    class Sqaure {
       constructor(_width) {
         this.width = _width;
         this.height = _width;
-        this.numOfRequestsForArea = 0;
       }
 
-      get area() {
-        this.numOfRequestsForArea++;
-        return this.width * this.height;
+      static equals(a, b) {
+        return a.width * b.width === b.width * b.height;
       }
 
-      set area(area) {
-        this.width = Math.sqrt(area);
-        this.height = this.width;
+      static isValidDimentions (width, height) {
+        return width === height;
       }
     }
 
-    let square1 = new Square(4);
-    square1.area = 25;
-    // console.log(square1.area);
-    // console.log(square1.area);
-    // console.log(square1.area);
-    // console.log(square1.area);
-    // console.log(square1.numOfRequestsForArea);
-    // console.log(square1.width);
-    // console.log(square1.height);
-    // console.log(square1.area);
+    let sqaure1 = new Sqaure(8);
+    let sqaure2 = new Sqaure(8);
+    
+    // console.log(Sqaure.isValidDimentions(7, 6));
+
+    // console.log(Sqaure.equals(sqaure1, sqaure2));
+
+    // console.log(sqaure1);
   </script>
 </body>
 </html>
