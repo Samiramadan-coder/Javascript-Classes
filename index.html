@@ -6,37 +6,56 @@
   <title>Document</title>
 </head>
 <body>
-  <h2>Classes: Getters & Setters</h2>
+  <h2>Classes: Extends & Inheritance</h2>
 
   <script type="text/javascript">
-    class Square {
-      constructor(_width) {
-        this.width = _width;
-        this.height = _width;
-        this.numOfRequestsForArea = 0;
+
+    // Parent and Child Class
+    class Person {
+      constructor(_name, _age) {
+        this.name = _name;   
+        this.age = _age;
       }
 
-      get area() {
-        this.numOfRequestsForArea++;
-        return this.width * this.height;
-      }
-
-      set area(area) {
-        this.width = Math.sqrt(area);
-        this.height = this.width;
+      describe() {
+        console.log(`I am ${this.name} and I am ${this.age} years old`);
       }
     }
 
-    let square1 = new Square(4);
-    square1.area = 25;
-    // console.log(square1.area);
-    // console.log(square1.area);
-    // console.log(square1.area);
-    // console.log(square1.area);
-    // console.log(square1.numOfRequestsForArea);
-    // console.log(square1.width);
-    // console.log(square1.height);
-    // console.log(square1.area);
+    class Programmer extends Person {
+      constructor(_name, _age, _yearsOfExperience) {
+        super(_name, _age);
+
+        // Custom behaviour
+        this.yearsOfExperience = _yearsOfExperience;
+      }
+
+      code() {
+        console.log(`${this.name} is Coding`);
+      }
+    }
+
+    let person1 = new Person('Jeff', 45);
+    let programmer1 = new Programmer("Dom", 56, 12);
+
+    // console.log(person1);
+    // console.log(programmer1);
+    // console.log(programmer1.describe());
+
+    const programmers = [
+      new Programmer("Sami", 33, 4),
+      new Programmer("Amr", 5, 4),
+      new Programmer("Sami", 1, 1),
+    ];
+
+    function developSoftware(programmers) {
+      // Develope software
+      console.log(programmers);
+      programmers.forEach(pro => pro.code())
+    }
+
+    developSoftware(programmers)
+
   </script>
 </body>
 </html>
